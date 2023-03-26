@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../source/special.css">
+    <script src="https://kit.fontawesome.com/c079cb430f.js" crossorigin="anonymous"></script>
+    <title>Fabian Campuzano/collaborations</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="name">Fabian Campuzano</h1>
+      <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="../index.html">About</a>
+          <a href="./recordings.html">Recordings</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="../videos/patchXRF.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="../videos/ghostst.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="../videos/ghostst.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Patch XR</h1>
+        <p>
+          Patch XR is a native VR environment to build and play electronic instruments in a 3D space. This duet
+          was recorded in October 2020, one part in Mexico City by Ensemble Liminar, and the other in Geneva by
+          Ensemble Contrechamps. Recordings were made separately, and brought together in the same virtual space.
+          This is part of a research in the use of VR in new and experimental music.
+        </p>
+        <a href="https://www.youtube.com/watch?v=m6Uy_Tocnsw&t=3s" target="_blank">
+          <span>Watch to full video here.</span>
+        </a>
+      </div>
+
+      <div class="content">
+        <h1>Ghost Variations</h1>
+        <p>
+          In the Museo Nacional de la Estampa (Mexico) the artist Omar Barquet made a piece of engraving which
+          represents his graphic interpretation of Schumann's work titled Geistervariationen. As part of the
+          presentation of the piece at the Museum, he asked two musicians to carry out, as a random game, a sound
+          re-interpretation of his work in a performance, allowing a space where the performer tries to transmute
+          the abstracted graphics to music with a certain freedom of interpretation.
+        </p>
+      </div>
+
+      <div class="content">
+        <h1>Virus #3.4</h1>
+        <p>
+          From the artist Elisabeth Schimana in collaboration with Ensemble Liminar.
+          The virus series is an expedition into acoustic perception, a sounding of the responses of our brains in the span of milliseconds, a plea for the precise acoustic moment.
+          "The live generated audio score - the electronic resonating body is the host to which the sounds of the instruments attach and adapt, they penetrate into it and use it for their replication..”
+        </p>
+        <a href="https://vimeo.com/383927007" target="_blank">
+          <span>Watch to full video here.</span>
+        </a>
+      </div>
+
+      <div class="media-icons">
+        <a href="https://www.instagram.com/fabiancampuzanomurillo_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@fabian_campuzano" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="mailto:cmurillofabian@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+
+    </section>
+    <script type="text/javascript">
+      //JS of responsive navigation
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //JS for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+
+</html>

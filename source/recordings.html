@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recordingsStyle.css">
+    <script src="https://kit.fontawesome.com/c079cb430f.js" crossorigin="anonymous"></script>
+    <title>Fabian Campuzano/recordings</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="name">Fabian Campuzano</h1>
+      <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="../index.html">About</a>
+          <a href="special.html">Collaborations</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="home">
+        <video class="video-slide active" src="../videos/caprichin.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="../videos/videos.mp4" autoplay muted loop></video>
+        <div class="content active">
+          <article>
+            <h5>Post-Prae-Ludium per Donau - Luigi Nono</h5>
+            <audio controls>
+              <source src="../videos/luiginono.mp3" type="audio/mpeg">
+            </audio>
+          </article>
+          <article>
+            <h5>Encounters II - William Kraft</h5>
+            <audio controls>
+              <source src="../videos/williamkraft.mp3" type="audio/mpeg">
+            </audio>
+          </article>
+          <article>
+            <h5>Cadenza VI - Henri Lazarof</h5>
+            <audio controls>
+              <source src="../videos/lazarof.mp3" type="audio/mpeg">
+            </audio>
+          </article>
+          <p>
+            <a href="https://vimeo.com/fabiancampuzano" target="_blank">
+              <span>Listen to full audios here.</span>
+            </a>
+          </p>
+        </div>
+
+        <div class="content">
+          <div class="projects">
+			      <h5>Capriccio - Krzysztof Penderecki</h5>
+			      <video class="left" src="../videos/caprichocho.mp4" poster="../videos/capriccio.jpg" controls>
+			      </video>
+		      </div>
+	        <div class="projects">
+		        <br />
+            <h5>Squint - Fabian Campuzano</h5>
+  		      <video class="right" src="../videos/squint.mp4" poster="../videos/squint.jpg" controls>
+	    	    </video>
+	        </div>
+        </div>
+
+        <div class="media-icons">
+          <a href="https://www.instagram.com/fabiancampuzanomurillo_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@fabian_campuzano" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="mailto:cmurillofabian@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+        </div>
+
+      </section>
+    </main>
+    <script type="text/javascript">
+      //JS of responsive navigation
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //JS for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+
+</html>
