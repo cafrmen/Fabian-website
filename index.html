@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://kit.fontawesome.com/c079cb430f.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="source/style.css" />
+		<title>Fabian Campuzano</title>
+	</head>
+
+	<body>
+		<header>
+		  <h1 class="name">Fabian Campuzano</h1>
+		  <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+		  <div class="navigation">
+			<div class="navigation-items">
+			  <a href="./source/recordings.html">Recordings</a>
+			  <a href="./source/special.html">Collaborations</a>
+			</div>
+		  </div>
+		</header>
+
+		<section class="home">
+		  <video class="video-slide active" src="videos/about1.mp4" autoplay muted loop></video>
+		  <div class="content active">
+			<h3>Tuba Player, Performer, Sound Designer and Creator.</h3>
+			<p>
+				Focused on exploration and experimentation with sound, he has three main projects.
+			</p>
+			<p>
+				<em>Tuba + Live Electronics, Sound Design and React!</em>
+				His most ambitious project, is currently in the research stage and tries to make the music react to what the performer is doing, regardless of whether the performer is a musician, an artist from another discipline or public.
+			</p>
+			<p>
+				He was a professor in three professional institutions and Scenic Creator of FONCA in his country, Mexico.
+				He has performed in Mexico, Chile, Canada, South Korea, Croatia, Germany and the Netherlands.
+			</p>
+		  </div>
+
+		  <div class="media-icons">
+			<a href="https://www.instagram.com/fabiancampuzanomurillo_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.tiktok.com/@fabian_campuzano" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+			<a href="mailto:cmurillofabian@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+		  </div>
+
+		</section>
+		<script type="text/javascript">
+		  //JS of responsive navigation
+		  const menuBtn = document.querySelector(".menu-btn");
+		  const navigation = document.querySelector(".navigation");
+
+		  menuBtn.addEventListener("click", () => {
+			menuBtn.classList.toggle("active");
+			navigation.classList.toggle("active");
+		  });
+		</script>
+	  </body>
+
+	</html>
